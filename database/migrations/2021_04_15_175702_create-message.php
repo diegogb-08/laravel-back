@@ -16,15 +16,18 @@ class CreateMessage extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('message');
-            $table->foreign('ownerId')
+            $table->date('date');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id', 'fk_messages_users')
             ->on('users')
             ->references('id')
             ->onDelete('restrict');
-            $table->foreign('partyId')
+            $table->unsignedBigInteger('party_id')->nullable();
+            $table->foreign('party_id', 'fk_messages_parties')
             ->on('parties')
             ->references('id')
             ->onDelete('restrict');
-            $table->timestamps('date');
+            $table->timestamps();
         });
     }
 

@@ -11,18 +11,18 @@ class Message extends Model
 
     protected $fillable = [
         'message',
-        'partyId',
-        'ownerId',
+        'party_id',
+        'owner_id',
         'date'
     ];
 
     public function users(){
 
-        return $this->belongsTo('App\Models\User', 'ownerId');
+        return $this->belongsTo('App\Models\User', 'owner_id');
     }
 
     public function parties(){
 
-        return $this->belongsTo('App\Models\Party', 'partyId');
+        return $this->belongsTo('App\Models\Party', 'party_id');
     }
 }

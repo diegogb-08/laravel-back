@@ -22,7 +22,7 @@ class User extends Authenticatable
         'password',
         'username',
         'token',
-        'friendId'
+        'friend_id'
     ];
 
     /**
@@ -45,8 +45,8 @@ class User extends Authenticatable
     ];
 
     public function parties(){
-            $this->hasOne('App\Models\Party', 'ownerId', 'id');
-        return $this->hasMany('App\Models\Party', 'memberId', 'id');
+            $this->hasOne('App\Models\Party', 'owner_id', 'id');
+        return $this->hasMany('App\Models\Party', 'member_id', 'id');
     }
 
     // public function parties(){
@@ -55,6 +55,6 @@ class User extends Authenticatable
     // }
 
     public function messages() {
-        return $this->hasMany('App\Models\Message', 'ownerId', 'id' );
+        return $this->hasMany('App\Models\Message', 'owner_id', 'id' );
     }
 }

@@ -17,6 +17,6 @@ class Game extends Model
 
     public function parties(){
 
-        return $this->hasMany('App\Models\Party', 'gameId', 'id');
+        return $this->hasMany('App\Models\Party', 'game_id', 'id');
     }
 }

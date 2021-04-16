@@ -16,20 +16,19 @@ class CreateParty extends Migration
         Schema::create('parties', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->foreign('gameId')
+            $table->unsignedBigInteger('game_id')->nullable();
+            $table->foreign('game_id', 'fk_parties_games')
             ->on('games')
             ->references('id')
-            ->onDelete('restrict');
-            $table->foreign('ownerId')
+            ->onDelete('set null');
+            $table->unsignedBigInteger('owner_id')->nullable();
+            $table->foreign('owner_id', 'fk_parties_owners')
             ->on('users')
             ->references('id')
-            ->onDelete('restrict');
-            $table->foreign('memberId')
+            ->onDelete('set null');
+            $table->unsignedBigInteger('member_id')->nullable();
+            $table->foreign('member_id', 'fk_parties_members')
             ->on('users')
-            ->references('id')
-            ->onDelete('restrict');
-            $table->foreign('messageId')
-            ->on('messages')
             ->references('id')
             ->onDelete('restrict');
             $table->timestamps();

@@ -11,29 +11,29 @@ class Party extends Model
 
     protected $fillable = [
         'name',
-        'gameId',
-        'ownerId',
-        'memberId',
-        'messageId'
+        'game_id',
+        'owner_id',
+        'member_id',
+        'message_id'
     ];
 
     public function members(){
 
-        return $this->hasMany('App\Models\User', 'memberId');
+        return $this->hasMany('App\Models\User', 'member_id');
     }
 
     public function owner(){
 
-        return $this->belongsTo('App\Models\User', 'ownerId');
+        return $this->belongsTo('App\Models\User', 'owner_id');
     }
 
     public function messages(){
 
-        return $this->hasMany('App\Models\Message', 'messageId');
+        return $this->hasMany('App\Models\Message', 'message_id');
     }
 
     public function games(){
 
-        return $this->belongsTo('App\Models\Game', 'gameId');
+        return $this->belongsTo('App\Models\Game', 'game_id');
     }
 }
