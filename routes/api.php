@@ -26,6 +26,13 @@ Route::group(['middleware'=> 'cors'], function () {
     Route::post('/register', [UserController::class, 'registerUser']);
     Route::post('/login', [UserController::class, 'loginUser']);
     Route::post('/logout', [UserController::class, 'logoutUser']);
+
+    Route::get('/users', [UserController::class, 'indexAllUsers']);
+    Route::get('/user/{id}', [UserController::class, 'indexUser']);
+
+    // Route::put('/user/update', [UserController::class, 'updateUser']);
+
+
 });
 
 

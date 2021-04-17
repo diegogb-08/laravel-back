@@ -95,4 +95,39 @@ class UserController extends Controller
             return $error;
         }
     }
+
+    public function indexAllUsers(){
+        try{
+            return User::all();
+        }catch(QueryException $error) {
+            return $error;
+        }
+    }
+
+    public function indexUser($id){
+        try{
+            return User::all()->where('id', '=', $id)
+            ->makeHidden(['password'])->keyBy('id');
+        } catch(QueryException $error) {
+            return $error;
+        }
+    }
+
+
+    // public function updateUser(Request $request){
+
+    //     $id = $request->input('id');
+
+    //     $username = $request->input('username');
+    //     $name = $request->input('name');
+    //     $email = $request->input('email');
+
+
+    //     try{
+    //         return User::all()->where('id', '=', $id)
+    //         ->update(['username' => $username, 'name' => $name, 'email' => $email]);
+    //     } catch(QueryException $error) {
+    //         return $error;
+    //     }
+    // }
 }
