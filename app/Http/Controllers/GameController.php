@@ -39,13 +39,10 @@ class GameController extends Controller
 
     // Delete a Game
 
-    public function deleteGame(Request $request){
-
-        $idGame = $request->input('id');
-
+    public function deleteGame($id){
         try {
-            return Game::where ('id', '=', $idGame)
-            ->delete($idGame);
+            return Game::where ('id', '=', $id)
+            ->delete();
         } catch(QueryException $error){
             return $error;
         }
