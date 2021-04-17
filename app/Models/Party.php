@@ -13,14 +13,8 @@ class Party extends Model
         'name',
         'game_id',
         'owner_id',
-        'member_id',
         'message_id'
     ];
-
-    public function members(){
-
-        return $this->hasMany('App\Models\User', 'member_id');
-    }
 
     public function owner(){
 

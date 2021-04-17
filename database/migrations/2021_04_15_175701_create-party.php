@@ -26,11 +26,6 @@ class CreateParty extends Migration
             ->on('users')
             ->references('id')
             ->onDelete('set null');
-            $table->unsignedBigInteger('member_id')->nullable();
-            $table->foreign('member_id', 'fk_parties_members')
-            ->on('users')
-            ->references('id')
-            ->onDelete('restrict');
             $table->timestamps();
         });
     }
