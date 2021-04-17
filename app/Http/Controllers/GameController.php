@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Database\QueryException;
+use Facade\Ignition\QueryRecorder\Query;
 use Illuminate\Http\Request;
-use App\Models\Games;
+use App\Models\Game;
 
 class GameController extends Controller
 {
@@ -17,7 +18,7 @@ class GameController extends Controller
 
         try{
 
-            return GameController::create([
+            return Game::create([
                 'title' => $title,
                 'thumbnail_url' => $thumbnail_url,
                 'url' => $url,

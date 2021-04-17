@@ -18,8 +18,8 @@ class CreateGame extends Migration
             $table->string('title')
             ->unique()
             ->required();
-            $table->string('thumbnail_url');
-            $table->string('url');
+            $table->string('thumbnail_url')->nullable();;
+            $table->string('url')->nullable();;
             $table->timestamps();
         });
     }
