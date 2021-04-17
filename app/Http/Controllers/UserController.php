@@ -38,4 +38,61 @@ class UserController extends Controller
             }
         }
     }
+
+
+    public function loginUser(Request $request){
+
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        try {
+
+            $validate_user = User::select('password')
+            ->where('email', 'LIKE', $email)
+            ->first();
+            
+            if(!$validate_user){
+                return response()->json([
+                    'error' => 'Email o password inválida'
+                ]);
+            }
+
+            $hashed = $validate_user-> password;
+
+            //comprobamos que password corresponde con el email
+            if(Hash::check($password, $hashed)){
+
+                //si existe, generamos su token
+                $length = 50;
+                $token = bin2hex(random_bytes($length));
+
+                //guardamos en token en su campo en la base de declarations
+                User::where('email', $email)
+                ->update(['token' => $token]);
+
+                //devolvemos la información actualizadas
+                return User::where('email', 'LIKE' ,$email)
+                ->get();
+            }else{
+                return response()->json([
+                    'error' => 'Email o password incorrecta'
+                ]);
+            }
+
+        }catch (QueryException $error) {
+            return response()->$error;
+        }
+
+    }
+
+    public function logoutUser(Request $request){
+        $id = $request->input('id');
+
+        try{
+            return User::where('id', '=', $id)
+            ->update(['token'=>'']);
+        }catch(QueryException $error) {
+            return $error;
+        }
+    }
 }

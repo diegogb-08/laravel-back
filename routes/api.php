@@ -24,6 +24,8 @@ Route::group(['middleware'=> 'cors'], function () {
 
     //User Controller routes
     Route::post('/register', [UserController::class, 'registerUser']);
+    Route::post('/login', [UserController::class, 'loginUser']);
+    Route::post('/logout', [UserController::class, 'logoutUser']);
 });
 
 
