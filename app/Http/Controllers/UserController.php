@@ -33,7 +33,7 @@ class UserController extends Controller
 
             if($eCode == 1062){
                 return response()-> json ([
-                    'error' => 'Usuario ya registrado'
+                    'error' => 'User already registered'
                 ]);
             }
         }
