@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\PartyController;
 use App\Http\Controllers\GameController;
 
 /*
@@ -32,8 +32,10 @@ Route::group(['middleware'=> 'cors'], function () {
     Route::get('/user/{id}', [UserController::class, 'indexUser']);
 
     // Route::put('/user/update', [UserController::class, 'updateUser']);
-
-
+    
+    // Party Controller Routes
+    Route::post('/party', [PartyController::class, 'createNewParty' ]);
+    Route::get('/party/game/{id}', [PartyController::class, 'indexAllGroupsByGameId' ]);
 });
 
 
