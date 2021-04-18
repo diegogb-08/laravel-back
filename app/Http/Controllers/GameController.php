@@ -39,8 +39,7 @@ class GameController extends Controller
 
     // Get all Games
 
-    public function indexAllGames ()
-    {
+    public function indexAllGames (){
         try{
             return Game::all();
         }catch(QueryException $error){
@@ -50,8 +49,7 @@ class GameController extends Controller
 
     // Get a Game by Id
 
-    public function indexGameById ($id)
-    {
+    public function indexGameById ($id){
         try{
             return Game::all()->where('id', '=', $id);
 
