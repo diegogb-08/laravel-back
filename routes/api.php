@@ -21,6 +21,8 @@ Route::group(['middleware'=> 'cors'], function () {
     // Game Controller Routes
     Route::delete('/game/{id}', [GameController::class, 'deleteGame']);
     Route::post('/game', [GameController::class, 'addGame' ]);
+    Route::get('/game', [GameController::class, 'indexAllGames']);
+    Route::get('/game/{id}', [GameController::class, 'indexGameById']);
 
     //User Controller routes
     Route::post('/register', [UserController::class, 'registerUser']);

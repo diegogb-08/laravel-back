@@ -37,6 +37,29 @@ class GameController extends Controller
         }
     }
 
+    // Get all Games
+
+    public function indexAllGames ()
+    {
+        try{
+            return Game::all();
+        }catch(QueryException $error){
+            return $error;
+        }
+    }
+
+    // Get a Game by Id
+
+    public function indexGameById ($id)
+    {
+        try{
+            return Game::all()->where('id', '=', $id);
+
+        } catch(QueryException $error) {
+            return $error;
+        }
+    }
+
     // Delete a Game
 
     public function deleteGame($id){
