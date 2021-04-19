@@ -7,55 +7,64 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+<p align="center"> This is our first project using the ORM - Laravel
+    <br> 
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📝 Table of Contents
 
-## Learning Laravel
+- [Built With](#built)
+- [Relational Table](#relational_table)
+- [Testing with Postman](#testing)
+- [Prerequisites](#prerequisites)
+- [Start Project](#start-project)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
+- [Git Flow](#gitFlow)
+- [Licence](#License)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⛏️ Built With <a name = "built"></a>
 
-## Laravel Sponsors
+- [MySql](https://www.mysql.com/) - Databse
+- [Laravel](https://laravel.com/) - ORM
+- [Postman](https://learning.postman.com/docs/getting-started/introduction/) - Server Environment
+- [Docker](https://docs.docker.com/) - Server Deployment
+- [GitFlow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow) - Work flow
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 💡 Relational Table <a name = "relational_table"></a>
 
-### Premium Partners
+This is a basic example of relational table about our project, emulating a structure database of a LCG web. 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+## 🎈 Testing with Postman <a name="testing"></a>
 
-## Contributing
+### Prerequisites  <a name="prerequisites"></a>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+### Start Project <a name="start-project"></a>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+A step by step series of examples that tell you how to get a development env running.
 
-## Security Vulnerabilities
+```bash
+  npm start
+```
+```bash
+  docker-compose up
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## ⛏️ Git Flow <a name = "gitFlow"></a>
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@LauraPorto](https://github.com/kylelobo) - Idea & Initial development work
+- [@gianrondo91](https://github.com/GianRondo91) - Idea & Initial development work
+
+
+## 🎉 Acknowledgments <a name = "acknowledgments"></a>
+
+- [@davidpestana](https://github.com/davidpestana) - Inspiration
 
 ## License
 
