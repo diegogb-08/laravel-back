@@ -114,20 +114,22 @@ class UserController extends Controller
     }
 
 
-    // public function updateUser(Request $request){
-
-    //     $id = $request->input('id');
-
-    //     $username = $request->input('username');
-    //     $name = $request->input('name');
-    //     $email = $request->input('email');
+    public function modifyUser(Request $request, $id){
 
 
-    //     try{
-    //         return User::all()->where('id', '=', $id)
-    //         ->update(['username' => $username, 'name' => $name, 'email' => $email]);
-    //     } catch(QueryException $error) {
-    //         return $error;
-    //     }
-    // }
+        $username = $request->input('username');
+        $name = $request->input('name');
+        $email = $request->input('email');
+
+        try{
+            return User::where('id', '=', $id)->update([
+                'username' => $username, 
+                'name' => $name, 
+                'email' => $email
+            ]); 
+        } catch(QueryException $error) {
+            return $error;
+        }
+    }
 }
+
