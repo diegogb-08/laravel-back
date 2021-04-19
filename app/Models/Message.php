@@ -12,13 +12,12 @@ class Message extends Model
     protected $fillable = [
         'message',
         'party_id',
-        'owner_id',
-        'date'
+        'user_id'
     ];
 
     public function users(){
 
-        return $this->belongsTo('App\Models\User', 'owner_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 
     public function parties(){

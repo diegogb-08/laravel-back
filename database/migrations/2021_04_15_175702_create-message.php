@@ -16,7 +16,6 @@ class CreateMessage extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('message');
-            $table->date('date');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id', 'fk_messages_users')
             ->on('users')
