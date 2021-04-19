@@ -47,7 +47,7 @@ class PartyController extends Controller
         }
     }
 
-    public function signInParty(Request $request){
+    public function login(Request $request){
 
         $user_id = $request -> input('user_id');
         $party_id = $request -> input('party_id');
@@ -63,39 +63,13 @@ class PartyController extends Controller
         }
     }
 
-    public function loginParty(Request $request){
+    public function logout($id){
 
-        $user_id = $request -> input('user_id');
-        $party_id = $request -> input('party_id');
-
-        try{
-
-            $credentials = array('user_id'=>$user_id, 'party' => $party_id);
-            $validation = Membership::validate($credentials, true);
-            // $validate_login = Membership::all()
-            // ->where('user_id','=',$user_id )
-            // ->where('party_id ','=',$party_id )
-            // ->get();
-            //$title = Party::select('title')->where('id', '=', $party_id )->get();
-            if(!$validation){
-                return response()->json([
-                    'error' => 'User not registered'
-                ]);
-            }else{
-                return response()->json([
-                    'message' => 'You just logged in in ${title}'
-                ]);
-            }
-
-
-        }catch(QueryException $error){
-            return $error;
-        }
-    }
-
-    public function logoutParty(Request $request){
+        $member = Membership::find($id);
 
         try{
+
+            return $member->delete();
 
         }catch(QueryException $error){
             return $error;
