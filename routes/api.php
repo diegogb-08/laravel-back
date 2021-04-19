@@ -35,8 +35,8 @@ Route::group(['middleware'=> 'cors'], function () {
     // Party Controller Routes
     Route::post('/party', [PartyController::class, 'createNewParty' ]);
     Route::get('/party/game/{id}', [PartyController::class, 'indexAllPartiesByGameId' ]);
-    Route::post('/party/signin', [PartyController::class, 'signInParty' ]);
-    Route::post('/party/login', [PartyController::class, 'loginParty' ]);
+    Route::post('/party/login', [PartyController::class, 'login' ]);
+    Route::delete('/party/logout/{id}', [PartyController::class, 'logout' ]);
 });
 
 
