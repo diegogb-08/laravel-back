@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PartyController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,10 @@ Route::group(['middleware'=> 'cors'], function () {
     Route::get('/party/game/{id}', [PartyController::class, 'indexAllPartiesByGameId' ]);
     Route::post('/party/login', [PartyController::class, 'login' ]);
     Route::delete('/party/logout/{id}', [PartyController::class, 'logout' ]);
+
+    // Message Controller Routes
+    Route::post('/message', [MessageController::class, 'postMessage' ]);
+    Route::delete('/message/{id}', [MessageController::class, 'deleteMessage' ]);
 });
 
 
