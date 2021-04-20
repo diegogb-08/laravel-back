@@ -41,7 +41,7 @@ Route::group(['middleware'=> 'cors'], function () {
 
     // Message Controller Routes
     Route::post('/message', [MessageController::class, 'postMessage' ]);
-    Route::delete('/message/{id}', [MessageController::class, 'deleteMessage' ]);
+    Route::delete('/message/{id}/{user_id}', [MessageController::class, 'deleteMessage' ]);
     Route::get('/message/{id}', [MessageController::class, 'indexAllMessagesByPartyId']);
 });
 
