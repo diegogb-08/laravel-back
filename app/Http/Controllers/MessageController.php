@@ -27,16 +27,13 @@ class MessageController extends Controller
         }
     }
 
-    public function deleteMessage(Request $request, $id){
+    public function deleteMessage($user_id, $id){
 
-        $user_id = $request -> input('user_id');
+        // $user_id = $request -> input('user_id');
 
-        $message = Message::find($id);
+        $message = Message::where('id', '=', $id)->where('user_id', '=', $user_id)->first();
 
-        $userId = $message.user_id;
-        // $userId = $message -> where('user_id', $user_id)->first();
-
-        if($user_id === $userId){
+        if($message){
             try{
                 return $message->delete();
 
