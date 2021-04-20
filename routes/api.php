@@ -31,8 +31,12 @@ Route::group(['middleware'=> 'cors'], function () {
     Route::post('/logout', [UserController::class, 'logoutUser']);
     Route::get('/users', [UserController::class, 'indexAllUsers']);
     Route::get('/user/{id}', [UserController::class, 'indexUser']);
+<<<<<<< HEAD
 
     // Route::put('/user/update', [UserController::class, 'updateUser']);
+=======
+    Route::put('/user/update/{id}', [UserController::class, 'modifyUser']);
+>>>>>>> 38be0a4948f41112b2169e42270fe18ffa20416f
     
     // Party Controller Routes
     Route::post('/party', [PartyController::class, 'createNewParty' ]);
@@ -43,6 +47,10 @@ Route::group(['middleware'=> 'cors'], function () {
     // Message Controller Routes
     Route::post('/message', [MessageController::class, 'postMessage' ]);
     Route::delete('/message/{id}', [MessageController::class, 'deleteMessage' ]);
+<<<<<<< HEAD
+=======
+    Route::get('/message/{id}', [MessageController::class, 'indexAllMessagesByPartyId']);
+>>>>>>> 38be0a4948f41112b2169e42270fe18ffa20416f
 });
 
 

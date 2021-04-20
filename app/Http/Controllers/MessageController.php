@@ -27,14 +27,33 @@ class MessageController extends Controller
         }
     }
 
-    public function deleteMessage($id){
+    public function deleteMessage(Request $request, $id){
+
+        $user_id = $request -> input('user_id');
 
         $message = Message::find($id);
 
+        $userId = $message.user_id;
+        // $userId = $message -> where('user_id', $user_id)->first();
+
+        if($user_id === $userId){
+            try{
+                return $message->delete();
+
+            }catch(QueryException $error){
+                return $error;
+            }
+        }else{
+            return response()-> json([
+                'success' => false,
+                'message' => 'Post can not be deleted'
+            ], 500);
+        }
+    }
+
+    public function indexAllMessagesByPartyId($id){
         try{
-
-            return $message->delete();
-
+            return Message::all()->where('party_id', '=', $id);
         }catch(QueryException $error){
             return $error;
         }

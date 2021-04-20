@@ -114,6 +114,7 @@ class UserController extends Controller
     }
 
 
+<<<<<<< HEAD
     // public function updateUser(Request $request){
 
     //     $id = $request->input('id');
@@ -131,3 +132,24 @@ class UserController extends Controller
     //     }
     // }
 }
+=======
+    public function modifyUser(Request $request, $id){
+
+
+        $username = $request->input('username');
+        $name = $request->input('name');
+        $email = $request->input('email');
+
+        try{
+            return User::where('id', '=', $id)->update([
+                'username' => $username, 
+                'name' => $name, 
+                'email' => $email
+            ]); 
+        } catch(QueryException $error) {
+            return $error;
+        }
+    }
+}
+
+>>>>>>> 38be0a4948f41112b2169e42270fe18ffa20416f
