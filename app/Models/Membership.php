@@ -9,6 +9,11 @@ class Membership extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'party_id',
+        'user_id',
+    ];
+
     public function user () {
         return $this -> hasMany('App\Models\User', 'user_id');
     }
